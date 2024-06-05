@@ -10,7 +10,9 @@ Currently we support checking in:
 - Michigan
 - Wisconsin
 
-Checking registration is accomplished by interacting directly with Secretary of State websites. Eventually, we'll support any state that has a website for checking registration status.
+Checking registration is accomplished by interacting directly with Secretary of State websites.
+
+A survey of all SOS websites, including required data and obstacles to our approach (like CAPTCHAs), can be found [in the Google spreadsheet we maintain](https://docs.google.com/spreadsheets/d/1tKDhmv0LFo-gAGcUODa7qdNVBWDP5mmyyMvjRe4Tgwo/). Feedback is most welcome.
 
 ### Check registration of a single voter
 
