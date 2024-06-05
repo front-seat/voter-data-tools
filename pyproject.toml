@@ -1,0 +1,61 @@
+[project]
+description = "The code behind https://voterbowl.org/"
+name = "voterbowl"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Dave Peck", email = "dave@frontseat.org" }]
+license = { text = "MIT" }
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+]
+
+[tool.pyright]
+include = ["server/**/*.py"]
+exclude = ["**/migrations/**"]
+typeCheckingMode = "basic"
+useLibraryCodeForTypes = true
+
+[tool.django-stubs]
+django_settings_module = "server.settings"
+
+[tool.ruff]
+exclude = [".venv", "**/migrations/**"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/components/*.py" = ["E501"]
+
+[tool.ruff.lint]
+extend-select = [
+  "E", # style errors
+  "D", # pydocstyle
+  "C", # flake8-comprehensions
+  "B", # flake8-bugbear
+]
+extend-ignore = [
+  "D100", # Allow missing docstring in public module
+  "D104", # Allow missing docstring in public package
+  "D203", # Instead, use D211 (zero blank lines before class docstring)
+  "D212", # Instead, use D213 (start multi-line summaries on the second line)
+  "D413", # Allow missing blank line after last section of docstring (who cares?)
+]
+
+[tool.djlint]
+blank_line_before_tag = "block"
+blank_line_after_tag = "endblock"
+use_gitignore = true
+format_css = true
+format_js = true
+profile = "django"
+indent = 2
+
+[tool.djlint.css]
+indent_size = 2
+
+[project.urls]
+Homepage = "https://github.com/front-seat/voterbowl"
+Changelog = "https://github.com/front-seat/voterbowl/releases"
+Issues = "https://github.com/front-seat/voterbowl/issues"
+CI = "https://github.com/front-seat/voterbowl/actions"
