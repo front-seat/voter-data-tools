@@ -34,4 +34,16 @@ A new CSV is written to `stdout` with the same fields as the input CSV plus extr
 
 ### Getting started
 
-This uses `python 3.12`. Clone this repository, create a venv (`python3 -m venv .venv`), enter it (`source .venv/bin/activate`), and the install the requirements (`pip install -r requirements.txt`). After that, `./vote.py` should work as expected.
+The `vote` command line tool, and underlying library, use `python 3.12` (including [newer language features](https://peps.python.org/pep-0695/)).
+
+To get started:
+
+1. Clone this repository (`git clone git@github.com:front-seat/voter-data-tools.git`)
+2. Create a virtualenv (`python -m venv .venv`)
+3. Enter the venv (`source .venv/bin/activate`)
+4. Install python dependencies (`pip install -r requirements.txt`)
+5. Try it! (`./vote.py check your name zipcode dob --details` &mdash; assuming you're in a supported state)
+
+The node stuff (`package.json` and friends) is included only so that we can use [Microsoft's `pyright`](https://github.com/microsoft/pyright) type checker.
+
+You can run tests with `./scripts/test.sh`. They are extremely minimal at the moment; ultimately, we'll want to have a basic suite of unit tests, and a separate set of tests for each state to make sure that the code continues to work correctly.
