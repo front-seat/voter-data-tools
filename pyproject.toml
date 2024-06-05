@@ -1,6 +1,6 @@
 [project]
-description = "The code behind https://voterbowl.org/"
-name = "voterbowl"
+description = "A command line tool, and library, for working with voter registration data in the United States."
+name = "voter-data-tools"
 version = "0.0.1"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -13,19 +13,15 @@ classifiers = [
 ]
 
 [tool.pyright]
-include = ["server/**/*.py"]
-exclude = ["**/migrations/**"]
+include = ["vote.py", "vlib/**/*.py"]
 typeCheckingMode = "basic"
 useLibraryCodeForTypes = true
 
-[tool.django-stubs]
-django_settings_module = "server.settings"
-
 [tool.ruff]
-exclude = [".venv", "**/migrations/**"]
+exclude = [".venv"]
 
 [tool.ruff.lint.per-file-ignores]
-"**/components/*.py" = ["E501"]
+"test_*.py" = ["D101", "D102"]
 
 [tool.ruff.lint]
 extend-select = [
@@ -42,20 +38,8 @@ extend-ignore = [
   "D413", # Allow missing blank line after last section of docstring (who cares?)
 ]
 
-[tool.djlint]
-blank_line_before_tag = "block"
-blank_line_after_tag = "endblock"
-use_gitignore = true
-format_css = true
-format_js = true
-profile = "django"
-indent = 2
-
-[tool.djlint.css]
-indent_size = 2
-
 [project.urls]
-Homepage = "https://github.com/front-seat/voterbowl"
-Changelog = "https://github.com/front-seat/voterbowl/releases"
-Issues = "https://github.com/front-seat/voterbowl/issues"
-CI = "https://github.com/front-seat/voterbowl/actions"
+Homepage = "https://github.com/front-seat/voter-data-tools"
+Changelog = "https://github.com/front-seat/voter-data-tools/releases"
+Issues = "https://github.com/front-seat/voter-data-tools/issues"
+CI = "https://github.com/front-seat/voter-data-tools/actions"

@@ -1,0 +1,11 @@
+{
+  "name": "voter-data-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A command line tool, and library, for working with voter registration data in the United States.",
+  "author": "Dave Peck <dave@frontseat.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "pyright": "^1.1.366"
+  }
+}

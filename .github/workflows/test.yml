@@ -1,0 +1,37 @@
+name: Test
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Set up nodejs 20.14
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.14
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install python dependencies
+        run: pip install -r requirements.txt
+      - name: Install nodejs dependencies
+        run: npm install
+      - name: Check formatting
+        run: ruff format --check
+      - name: Lint
+        run: ruff check
+      - name: Check types
+        run: npx pyright
+      - name: Run unit tests
+        run: python -m unittest
