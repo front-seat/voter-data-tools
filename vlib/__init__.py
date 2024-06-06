@@ -2,6 +2,7 @@
 
 from .ga import GeorgiaVoterRegistrationTool
 from .mi import MichiganVoterRegistrationTool
+from .pa import PennsylvaniaVoterRegistrationTool
 from .tool import VoterRegistrationTool
 from .wi import WisconsinVoterRegistrationTool
 from .zipcodes import get_state
@@ -9,6 +10,7 @@ from .zipcodes import get_state
 _TOOLS = {
     "GA": GeorgiaVoterRegistrationTool,
     "MI": MichiganVoterRegistrationTool,
+    "PA": PennsylvaniaVoterRegistrationTool,
     "WI": WisconsinVoterRegistrationTool,
 }
 

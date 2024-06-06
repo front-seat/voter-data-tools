@@ -8,6 +8,7 @@ Currently we support checking in:
 
 - Georgia
 - Michigan
+- Pennsylvania
 - Wisconsin
 
 Checking registration is accomplished by interacting directly with Secretary of State websites.
